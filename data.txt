@@ -1,0 +1,8 @@
+Restu,DUP
+Tekun,DUP
+DKG31,Fajar
+Fajar,Aman
+Aman,DKG31
+Restu,Aman
+Indah,Aman
+DUP,Indah
