@@ -1,10 +1,10 @@
 import java.util.*;
 
 class Graph {
-	private int numVertices;
+	private int numVertices;				// number of vertices
 	private Map<Vertex, List<Vertex>> adj;	// adjacency list
 
-	Graph() {
+	Graph() { 
 		numVertices = 0;
 		adj = new HashMap<>();
 	}
@@ -21,7 +21,7 @@ class Graph {
 	public void addEdge(String source, String destination) {
 		Vertex u = new Vertex(source);
 		Vertex v = new Vertex(destination);
-		adj.get(u).add(v);
+		adj.get(u).add(v);	// our implementation uses a digraph
 	}
 
 	public List<Vertex> getNeighbors(Vertex u) {
@@ -40,8 +40,7 @@ class Graph {
 			for (Vertex v : visited) {
 				if (first) {
 					System.out.printf("%s", v.getName());
-					first = false;	// Flag for first vertex
-									//	just for printing path
+					first = false;	// Flag for first vertex, used in priting path
 				} else {
 					System.out.printf(" -> %s", v.getName());
 				}
@@ -55,7 +54,7 @@ class Graph {
 	private boolean dfsRecursive(Vertex current, Vertex destination, 
 									Set<Vertex> visited) {
 		if (visited.contains(current)) return false;	// Backtrack if visited
-		visited.add(current);
+		visited.add(current);	// mark current vertex as visited
 
 		// Destination is reached
 		if (current.equals(destination)) return true;

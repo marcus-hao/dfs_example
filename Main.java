@@ -22,14 +22,16 @@ class Main {
 			e.printStackTrace();
 		}
 
-        String asciiArt = "   __o            __o            __o            __o            __o\n"
-                        + " _`\\<,_         _`\\<,_         _`\\<,_         _`\\<,_         _`\\<,_\n"
-                        + "(_)/ (_)       (_)/ (_)       (_)/ (_)       (_)/ (_)       (_)/ (_)\n"
-                        + "* * * * * * * * * * * * * Cyclist Road Network * * * * * * * * * * * * * * *";
+		String asciiArt = "   __o            __o            __o            __o            __o\n"
+				+ " _`\\<,_         _`\\<,_         _`\\<,_         _`\\<,_         _`\\<,_\n"
+				+ "(_)/ (_)       (_)/ (_)       (_)/ (_)       (_)/ (_)       (_)/ (_)\n"
+				+ "* * * * * * * * * * * * * Cyclist Road Network * * * * * * * * * * * * * * *";
 
-
-		System.out.println(asciiArt);
-		while (true) {
+		boolean exit = false;	// flag for end of program
+		while (!exit) {
+			System.out.print("\033[H\033[2J");
+			System.out.flush();
+			System.out.println(asciiArt);
 			System.out.println("1. View locations.");
 			System.out.println("2. Find a path");
 			System.out.println("99. Exit");
@@ -49,10 +51,17 @@ class Main {
 					graph.findPath(source, destination);
 					break;
 				case 99:
-					System.out.println("Quitting...");
-					System.exit(0);
+					System.out.println("Exitting...");
+					exit = true;
+					break;
+				default:
+					System.out.println("Invalid option.");
+					break;
 			}
-			System.out.println();
+			if (!exit) {
+				System.out.print("Press Enter to continue...");
+				scanner.nextLine();
+			}
 		}
 	}
 }
