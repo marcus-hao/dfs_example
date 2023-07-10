@@ -1,8 +1,9 @@
-Restu,DUP
-Tekun,DUP
-DKG31,Fajar
-Fajar,Aman
-Aman,DKG31
-Restu,Aman
-Indah,Aman
-DUP,Indah
+Saujana,Restu
+Restu,Tekun
+Tekun,Indah Kembara
+Indah Kembara,Aman Damai
+Indah Kembara,Fajar
+Aman Damai,Fajar
+Aman Damai,Cahaya Gemilang
+Fajar,Bakti Permai
+Bakti Permai,Cahaya Gemilang
